@@ -1,0 +1,14 @@
+{
+  "name": "russ-skills",
+  "owner": {
+    "name": "Russ McKendrick",
+    "email": "russ@mckendrick.io"
+  },
+  "plugins": [
+    {
+      "name": "russ-skills",
+      "source": "./",
+      "description": "Russ McKendrick's collection of agent skills."
+    }
+  ]
+}

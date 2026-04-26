@@ -1,0 +1,9 @@
+{
+  "name": "russ-skills",
+  "description": "Russ McKendrick's collection of agent skills.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Russ McKendrick",
+    "email": "russ@mckendrick.io"
+  }
+}

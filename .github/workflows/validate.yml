@@ -1,0 +1,28 @@
+name: validate-skills
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Validate every skill
+        run: |
+          set -euo pipefail
+          shopt -s nullglob
+          dirs=(skills/*/)
+          if [ ${#dirs[@]} -eq 0 ]; then
+            echo "No skills found under skills/" >&2
+            exit 1
+          fi
+          for dir in "${dirs[@]}"; do
+            echo "::group::$dir"
+            npx -y skills-ref validate "$dir"
+            echo "::endgroup::"
+          done
