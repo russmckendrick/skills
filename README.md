@@ -1,4 +1,4 @@
-# russ-skills
+# Russ's Skills
 
 Russ McKendrick's collection of [Agent Skills](https://agentskills.io) — reusable, portable instructions and resources that any skills-compatible AI agent (Claude, Claude Code, Cursor, GitHub Copilot, Gemini CLI, OpenCode, and more) can load on demand.
 
