@@ -132,3 +132,21 @@ Always write the DESIGN.md file to disk so the user can download or commit it di
 For updates, return the **complete updated file**, not a diff.
 
 After producing the file, give the user a brief (2–4 sentence) summary of the design intent and any notable choices — but keep it short. The DESIGN.md itself is the artifact; the prose-around-the-prose should not compete with it.
+
+## After writing a new DESIGN.md: cross-link from AGENTS.md / CLAUDE.md
+
+When you create a *new* DESIGN.md (not when updating an existing one), make sure any agent context file already in the project points at it, so the next agent session that loads that context file discovers the design system automatically.
+
+1. Look in the same directory as the new DESIGN.md for `AGENTS.md`, then `CLAUDE.md`. If **both** exist, update `AGENTS.md` only. If **neither** exists, do nothing — never create one.
+2. Read the existing file. If it already mentions `DESIGN.md` (case-insensitive), do nothing — this keeps the step idempotent across re-runs.
+3. Otherwise, add a single minimal reference. Prefer adding one bullet under an existing relevant heading (e.g. `## Design`, `## Style`, `## Conventions`) if one fits the file's structure. If no such heading exists, append a new section at the end of the file:
+
+   ```markdown
+   ## Design system
+
+   See [`DESIGN.md`](./DESIGN.md) for the project's design tokens and component conventions. Read it before generating UI.
+   ```
+
+4. Keep the addition to one heading and one sentence. AGENTS.md / CLAUDE.md files are deliberately terse; do not restructure or summarise the design system inline — the link is the whole point.
+
+This step is for new DESIGN.md creation only. The "Updating an existing DESIGN.md" workflow above does not touch AGENTS.md / CLAUDE.md: the cross-link was either added on first creation or intentionally omitted, and either way it isn't this skill's job to revisit.
