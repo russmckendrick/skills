@@ -17,13 +17,13 @@ Install all skills, or just one, via the cross-vendor [`skills` CLI](https://ski
 npx skills add russmckendrick/skills
 
 # a single skill
-npx skills add russmckendrick/skills/hello-world
+npx skills add russmckendrick/skills/design-md
 ```
 
 ### 2. GitHub CLI (`gh skill`)
 
 ```sh
-gh skill install russmckendrick/skills/hello-world
+gh skill install russmckendrick/skills/design-md
 gh skill list
 ```
 
@@ -44,7 +44,7 @@ Then ask Claude to run any skill from the table below.
 
 | Skill | Description |
 | --- | --- |
-| [`hello-world`](./skills/hello-world) | Confirms the install is working. |
+| [`design-md`](./skills/design-md) | Authors and updates [DESIGN.md](https://github.com/google-labs-code/design.md) files — Google Labs' open format for describing a design system (YAML tokens + markdown rationale) to AI coding agents. Generates a new `DESIGN.md` from a brand brief, or updates an existing one without breaking token references or section order. |
 
 More on the way.
 
